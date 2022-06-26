@@ -2,7 +2,7 @@
 Remake of betting tips page Draw No Bet. Now it is REST API.
 
 LAUNCH APPLICATION:
-1. The repository contains an example database that you can use (import in HeidiSQL).
+1. The repository contains an example database file (it called "drawnobet") that you can use (import in HeidiSQL).
 2. Type in terminal: npm start
 3. Then go http://localhost:3000
 
