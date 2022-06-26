@@ -1,0 +1,15 @@
+{{> key}}
+
+<h3>Ostatnie typy</h3>
+
+{{#each lastBetsList}}
+  <div class='bet-container {{checkStatus this.status}}'>
+    <div class="bet-event">{{this.event}}</div>
+    <img class="bet-image" src="/img/{{this.image}}.png" alt="">
+    <div class="bet-bet">Typ: {{this.bet}}</div>
+    <div class="bet-odd">Kurs: {{precision this.odd}}</div>
+    <div class="bet-discipline">{{this.discipline}}</div>
+    <div class="bet-bookmaker">Bukmacher: {{this.bookmaker}}</div>
+    <div class="bet-datetime">{{this.datetime}}</div>
+  </div>
+{{/each}}

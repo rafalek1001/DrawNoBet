@@ -1,0 +1,50 @@
+<h3>Edytujesz wydarzenie: {{bet.event}} (<small>ID: {{bet.id}}</small>)</h3>
+<form class="bet-edited-form" method="POST" action="/bet/{{bet.id}}?_method=PUT">
+  <label>
+    Wydarzenie:<br>
+    <input type="text" name="event" value="{{bet.event}}"><br>
+  </label>
+  <br>
+  <label>
+    Typ:<br>
+    <input type="text" name="bet" value="{{bet.bet}}"><br>
+  </label>
+  <br>
+  <label>
+    Kurs:<br>
+    <input type="number" name="odd" step=".01" min="1" value="{{bet.odd}}"><br>
+  </label>
+  <br>
+  <label>
+    Bukmacher:<br>
+    <input type="text" name="bookmaker" value="{{bet.bookmaker}}"><br>
+  </label>
+  <br>
+  <label>
+    Dyscyplina:<br>
+    <select name="disciplineId">
+    {{#each disciplinesList}}
+      <option value="{{this.id}}" {{#if (equals this.id ../bet.disciplineId)}}selected="selected"{{/if}}>{{this.name}}</option>
+    {{/each}}
+    </select>
+  </label>
+  <br>
+  <br>
+  <label>
+    Data:<br>
+    <input type="datetime-local" name="datetime" value="{{bet.datetime}}"><br>
+  </label>
+  <br>
+  <label>
+    Status:<br>
+    <select name="status">
+      <option value="0" {{#if (equals bet.status 0)}}selected="selected"{{/if}}>Oczekiwanie</option>
+      <option value="1" {{#if (equals bet.status 1)}}selected="selected"{{/if}}>Pozytywny</option>
+      <option value="2" {{#if (equals bet.status 2)}}selected="selected"{{/if}}>Negatywny</option>
+      <option value="3" {{#if (equals bet.status 3)}}selected="selected"{{/if}}>Zwrot</option>
+    </select>
+  </label>
+  <br>
+  <br>
+  <button class="bet-btn" type="submit">Zapisz</button>
+</form>

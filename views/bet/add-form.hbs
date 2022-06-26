@@ -1,0 +1,39 @@
+<form action="/bet" method="POST">
+  <label>
+    Wydarzenie:<br>
+    <input type="text" name="event"><br>
+  </label>
+  <br>
+  <label>
+    Typ:<br>
+    <input type="text" name="bet"><br>
+  </label>
+  <br>
+  <label>
+    Kurs:<br>
+    <input type="number" name="odd" step=".01" min="1"><br>
+  </label>
+  <br>
+  <label>
+    Bukmacher:<br>
+    <input type="text" name="bookmaker"><br>
+  </label>
+  <br>
+  <label>
+    <label>
+    Dyscyplina:<br>
+    <select name="disciplineId">
+    {{#each disciplinesList}}
+      <option value="{{this.id}}">{{this.name}}</option>
+    {{/each}}
+    </select>
+  </label>
+  <br>
+  <br>
+  <label>
+    Data:<br>
+    <input type="datetime-local" name="datetime"><br>
+  </label>
+  <br>
+  <button type="submit">Dodaj</button>
+</form>

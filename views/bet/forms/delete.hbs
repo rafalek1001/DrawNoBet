@@ -1,0 +1,10 @@
+<h2><span class="bet-deleted">{{event}} <small>(ID: {{id}})</small></span></h2>
+<h3>Czy na pewno chcesz usunąć ten zakład?</h3>
+<div class="bet-modification">
+  <form method="POST" action="/bet/{{id}}?_method=DELETE">
+    <button class="bet-btn bet-delete-execute" type="submit">Usuń</button>
+  </form>
+  <form method="GET" action="/bet">
+    <button class="bet-btn bet-delete-back" type="submit">Wróć</button>
+  </form>
+</div>

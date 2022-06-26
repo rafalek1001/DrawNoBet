@@ -1,0 +1,27 @@
+{{> key}}
+
+<a href="/bet/add-form"><button class="bet-btn bet-add-btn">Dodaj typ</button></a>
+
+<h3>Typy</h3>
+
+{{#each betsList}}
+  <div class="bet-container {{checkStatus this.status}}">
+    <div class="bet-event">{{this.event}}</div>
+    <img class="bet-image" src="/img/{{this.image}}.png" alt="">
+    <div class="bet-bet">Typ: {{this.bet}}</div>
+    <div class="bet-odd">Kurs: {{precision this.odd}}</div>
+    <div class="bet-discipline">{{this.discipline}}</div>
+    <div class="bet-bookmaker">Bukmacher: {{this.bookmaker}}</div>
+    <div class="bet-datetime">{{this.datetime}}</div>
+    <div class="bet-modification">
+      <form method="GET" action="/bet/form/edit/{{this.id}}">
+        <button class="bet-btn bet-edit-btn" type="submit">Edytuj</button>
+      </form>
+      <form method="GET" action="/bet/form/delete/{{this.id}}">
+        <button class="bet-btn bet-delete-btn" type="submit">Usuń</button>
+      </form>
+    </div>
+  </div>
+{{/each}}
+<br>
+{{> go-back}}
